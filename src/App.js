@@ -4,6 +4,7 @@ import { Navbar } from "./components/navbar/Navbar";
 import { Tour } from "./components/ourTour/Tour";
 import { Booking } from "./components/booking/Booking";
 import { Home } from "./components/Home";
+import { Footer } from "./components/footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="tour" element={<Tour />} />
           <Route path="booking" element={<Booking />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

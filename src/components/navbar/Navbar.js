@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className='w-full flex justify-between items-center py-5 px-10'>
-        <img src={Img} alt="#" className='w w-16' />
+    <nav className='w-full flex flex-col md:flex-row  justify-between items-center py-5 px-10'>
+        <Link to="/"><img src={Img} alt="#" className='w w-16' /></Link>
         
-        <ul className='flex gap-10'>
-            <li>
+        
+        <ul className='flex gap-10 mt-5 md:mt-0'>
+            <li className='hover:underline'>
             <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className='hover:underline'>
             <Link to="tour">Our Tour</Link>
             </li>
-            <li>
+            <li className='hover:underline'>
             <Link to="booking">Booking</Link>
             </li>
-            <li>
+            <li className='hover:underline'>
             <Link to="/">FAQ</Link>
             </li>
         </ul>

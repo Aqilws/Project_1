@@ -1,16 +1,23 @@
-import React from 'react'
+
 import { Service } from "./service/Service";
 import { Content } from "./content/Content";
-import { Footer } from "./footer/Footer";
 import { Banner } from "./banner/Banner";
+import React, { useEffect, useState } from "react";
 
 export const Home = () => {
+  const [travel, setTravel] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3004/travel?_limit=4")
+      .then((res) => res.json())
+      .then((json) => setTravel(json));
+  }, []);
+  
   return (
     <>
         <Banner />
         <Service />
-        <Content />
-        <Footer/>
+        <Content data={travel}/>
     </>
   )
 }
