@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 export const Booking = () => {
   const [travel, setTravel] = useState([]);
@@ -17,6 +18,7 @@ export const Booking = () => {
             <img src={item.img} alt="#" className="mb-5 rounded-xl h-40" />
             <h1 className="font-semibold">{item.name}</h1>
             <h3>${item.price}/Person</h3>
+            <Link to={`/edit/${item.id}`}>Edit</Link>
           </div>
         ))}
       </div>
